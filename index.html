@@ -1,111 +1,805 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Planejamento Previdenciário Inteligente</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Planejamento Previdenciário | Dra. Pauline Rodrigues</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #fdfaf5;
+    :root {
+      --bege: #f4ede3;
+      --bege-claro: #fbf8f3;
+      --petroleo: #17383d;
+      --terracota: #b7663f;
+      --texto: #2e2e2e;
+      --branco: #ffffff;
+      --borda: #e4d8ca;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      color: #333;
     }
-    header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-      background-color: #fff6ed;
+
+    html {
+      scroll-behavior: smooth;
     }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #1e2a38;
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bege-claro);
+      color: var(--texto);
+      line-height: 1.6;
     }
-    .section {
-      max-width: 700px;
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1100px, 90%);
       margin: 0 auto;
-      padding: 1.5rem;
     }
-    .highlight {
-      color: #e86a33;
-      font-weight: bold;
+
+    /* CAPA */
+
+    .hero {
+      background: var(--bege);
+      padding: 70px 0;
     }
-    .investment {
-      font-size: 1.2rem;
-      background: #f0f0f0;
-      padding: 1rem;
-      border-radius: 12px;
-      text-align: center;
-      margin: 1.5rem 0;
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
     }
-    .btn-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1rem;
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.05;
+      color: var(--petroleo);
+      margin-bottom: 24px;
     }
+
+    .hero p {
+      font-size: 1.08rem;
+      margin-bottom: 18px;
+    }
+
+    .hero strong {
+      color: var(--terracota);
+    }
+
+    .hero-photo {
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0,0,0,.12);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+    }
+
+    .price {
+      margin: 26px 0;
+      font-size: 1.1rem;
+    }
+
+    .price span {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--petroleo);
+    }
+
     .btn {
-      background-color: #1e2a38;
-      color: white;
-      padding: 1rem;
-      text-align: center;
+      display: inline-block;
+      background: var(--petroleo);
+      color: var(--branco);
       text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: background 0.3s;
+      padding: 16px 26px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: .2s ease;
     }
+
     .btn:hover {
-      background-color: #e86a33;
+      transform: translateY(-2px);
+      background: var(--terracota);
     }
-    footer {
+
+    /* FAIXA */
+
+    .highlight-strip {
+      background: var(--petroleo);
+      color: var(--branco);
       text-align: center;
-      font-size: 0.9rem;
-      padding: 2rem 1rem;
+      padding: 24px 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 75px 0;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--petroleo);
+      font-size: 2.3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 35px;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--branco);
+      padding: 26px;
+      border-radius: 18px;
+      border: 1px solid var(--borda);
+      box-shadow: 0 10px 30px rgba(0,0,0,.04);
+    }
+
+    .card h3 {
+      color: var(--terracota);
+      margin-bottom: 10px;
+    }
+
+    /* COMPARAÇÃO */
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .comparison-box {
+      background: var(--branco);
+      border-radius: 18px;
+      padding: 28px;
+      border: 1px solid var(--borda);
+    }
+
+    .comparison-box h3 {
+      color: var(--petroleo);
+      margin-bottom: 14px;
+    }
+
+    .comparison-box ul {
+      padding-left: 20px;
+    }
+
+    .comparison-box li {
+      margin-bottom: 10px;
+    }
+
+    /* SOBRE */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-photo {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+    }
+
+    /* OFERTA */
+
+    .offer {
+      background: var(--petroleo);
+      color: var(--branco);
+      border-radius: 24px;
+      padding: 45px;
+      text-align: center;
+    }
+
+    .offer h2 {
+      color: var(--branco);
+    }
+
+    .offer-price {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 18px 0;
+    }
+
+    .offer .btn {
+      background: var(--terracota);
+    }
+
+    .offer .btn:hover {
+      background: #975134;
+    }
+
+    /* DEPOIMENTOS */
+
+    .testimonial {
+      font-style: italic;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 14px;
+      color: var(--petroleo);
+      font-style: normal;
+    }
+
+    .testimonial-note {
+      font-size: .82rem;
       color: #777;
+      margin-top: 18px;
+    }
+
+    /* CTA */
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .cta-card {
+      background: var(--branco);
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px solid var(--borda);
+      text-align: center;
+    }
+
+    .cta-card h3 {
+      color: var(--petroleo);
+      margin-bottom: 12px;
+    }
+
+    .cta-card p {
+      margin-bottom: 18px;
+    }
+
+    /* EBOOK */
+
+    .ebook-card {
+      background: var(--terracota);
+      color: white;
+    }
+
+    .ebook-card h3 {
+      color: white;
+    }
+
+    .ebook-card .btn {
+      background: white;
+      color: var(--petroleo);
+    }
+
+    /* FAQ */
+
+    details {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--petroleo);
+    }
+
+    details p {
+      margin-top: 12px;
+    }
+
+    /* WHATSAPP FLUTUANTE */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 30px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(0,0,0,.2);
+      z-index: 99;
+    }
+
+    footer {
+      background: #10292d;
+      color: #dce4e5;
+      text-align: center;
+      padding: 32px 20px;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid,
+      .about-grid,
+      .comparison,
+      .cards,
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 45px 0;
+      }
+
+      .hero-photo {
+        max-width: 420px;
+        margin: auto;
+      }
+
+      .hero-photo img {
+        height: auto;
+      }
+
+      .about-photo img {
+        height: auto;
+      }
+
+      .offer {
+        padding: 32px 22px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Planejamento Previdenciário Inteligente</h1>
-    <p>Com a Dra. Pauline Rodrigues</p>
+  <!-- CAPA -->
+
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div>
+
+        <h1>
+          Sua aposentadoria merece mais do que uma simulação automática do Meu INSS.
+        </h1>
+
+        <p>
+          No Planejamento Previdenciário, você recebe
+          <strong>simulações detalhadas e individualizadas</strong>,
+          com análise do seu histórico contributivo, comparação de cenários
+          e estratégia para as próximas contribuições.
+        </p>
+
+        <p>
+          Descubra quando você pode se aposentar e quais caminhos podem ser
+          mais vantajosos para o seu futuro.
+        </p>
+
+        <div class="price">
+          Planejamento Previdenciário
+          <span>R$ 697</span>
+        </div>
+
+        <a
+          class="btn"
+          href="https://wa.me/5565996453417?text=Olá%2C%20Dra.%20Pauline!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Planejamento%20Previdenciário."
+          target="_blank"
+        >
+          QUERO FAZER MEU PLANEJAMENTO
+        </a>
+
+      </div>
+
+      <div class="hero-photo">
+        <img src="pauline.jpg" alt="Dra. Pauline Rodrigues">
+      </div>
+
+    </div>
   </header>
 
-  <div class="section">
-    <p>
-      Descubra se você está contribuindo da forma correta e o que precisa fazer para conquistar uma
-      <span class="highlight">aposentadoria segura e vantajosa</span>.
-    </p>
-
-    <ul>
-      <li>Análise completa da sua situação no INSS</li>
-      <li>Estratégia personalizada para se aposentar antes e melhor</li>
-      <li>Suporte direto com advogada especialista</li>
-    </ul>
-
-    <div class="investment">
-      <p><strong>Investimento:</strong></p>
-      <p>R$500 à vista ou 10x de R$57 no cartão</p>
-    </div>
-
-    <div class="btn-container">
-      <a class="btn" href="https://wa.me/5565999555538" target="_blank">💬 Falar no WhatsApp</a>
-      <a class="btn" href="https://forms.gle/36SMFPCtEQ9VQVSS8" target="_blank">📋 Consultoria Expressa para MEI</a>
-      <a class="btn" href="https://drapaulinecom-my.sharepoint.com/:b:/r/personal/atendimento_drapauline_com/Documents/5%20erros%20na%20aposentadoria.pdf?csf=1&web=1&e=kYdaJL" target="_blank">📘 Baixar eBook gratuito</a>
-    </div>
-
-    <p style="margin-top:2rem;">
-      Você já contribuiu por anos, mas isso não garante sua aposentadoria. Um erro hoje pode custar caro no futuro.<br><br>
-      <strong>Não espere o INSS te surpreender. Planeje agora.</strong>
-    </p>
+  <div class="highlight-strip">
+    Meu INSS simula. O planejamento analisa, compara e traça uma estratégia.
   </div>
 
+  <!-- PARA QUEM É -->
+
+  <section>
+    <div class="container">
+
+      <h2>Esse planejamento é para você que...</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>É MEI</h3>
+          <p>
+            Paga o DAS todos os meses, mas não sabe exatamente como isso
+            impacta sua futura aposentadoria.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Tem vários vínculos</h3>
+          <p>
+            Já trabalhou como CLT, autônomo, contribuinte individual ou MEI
+            e quer entender como esses períodos se relacionam.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Quer contribuir com estratégia</h3>
+          <p>
+            Não quer simplesmente pagar INSS todos os meses, mas entender
+            quanto, quando e de que forma contribuir.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPARAÇÃO -->
+
+  <section style="background:#f4ede3;">
+    <div class="container">
+
+      <h2>Simulação do Meu INSS x Planejamento Previdenciário</h2>
+
+      <p class="section-intro">
+        A simulação automática do Meu INSS pode ser um ponto de partida.
+        O Planejamento Previdenciário vai além porque analisa o seu caso
+        individualmente e permite comparar diferentes cenários.
+      </p>
+
+      <div class="comparison">
+
+        <div class="comparison-box">
+
+          <h3>Simulação do Meu INSS</h3>
+
+          <ul>
+            <li>Utiliza os dados disponíveis no sistema.</li>
+            <li>Gera um resultado automático.</li>
+            <li>Pode ser afetada por inconsistências existentes no CNIS.</li>
+            <li>Não cria uma estratégia individual de contribuição.</li>
+            <li>Não substitui uma análise previdenciária individualizada.</li>
+          </ul>
+
+        </div>
+
+        <div class="comparison-box">
+
+          <h3>Meu Planejamento Previdenciário</h3>
+
+          <ul>
+            <li>Análise individual do seu histórico contributivo.</li>
+            <li>Conferência das informações do CNIS.</li>
+            <li>Simulações detalhadas de diferentes cenários.</li>
+            <li>Comparação das possibilidades de aposentadoria.</li>
+            <li>Estratégia para as próximas contribuições.</li>
+            <li>Orientação previdenciária personalizada.</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ENTREGA -->
+
+  <section>
+    <div class="container">
+
+      <h2>O que você recebe no planejamento</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Análise do CNIS</h3>
+          <p>
+            Conferência do seu histórico contributivo e identificação
+            de informações que precisam de atenção.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Simulações detalhadas</h3>
+          <p>
+            Comparação de diferentes cenários para visualizar suas
+            possibilidades previdenciárias.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Estratégia previdenciária</h3>
+          <p>
+            Orientação para que você saiba como organizar suas
+            próximas contribuições.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+
+  <section style="background:#f4ede3;">
+    <div class="container about-grid">
+
+      <div class="about-photo">
+        <img src="pauline.jpg" alt="Dra. Pauline Rodrigues">
+      </div>
+
+      <div>
+
+        <h2>Oi, eu sou Pauline Rodrigues</h2>
+
+        <p>
+          Sou advogada previdenciarista e meu trabalho é ajudar trabalhadores,
+          autônomos e MEIs a entenderem sua vida previdenciária antes de chegar
+          o momento da aposentadoria.
+        </p>
+
+        <p style="margin-top:15px;">
+          Em vez de olhar apenas uma data estimada, analiso seu histórico
+          contributivo, as informações do CNIS, diferentes cenários e as
+          possibilidades existentes para construir uma estratégia previdenciária
+          individualizada.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PREÇO -->
+
+  <section>
+    <div class="container">
+
+      <div class="offer">
+
+        <h2>Planejamento Previdenciário Completo</h2>
+
+        <p>
+          Entenda suas possibilidades e tenha uma estratégia para
+          suas próximas contribuições.
+        </p>
+
+        <div class="offer-price">
+          R$ 697
+        </div>
+
+        <a
+          class="btn"
+          href="https://wa.me/5565996453417?text=Olá%2C%20Dra.%20Pauline!%20Quero%20fazer%20meu%20Planejamento%20Previdenciário."
+          target="_blank"
+        >
+          QUERO MEU PLANEJAMENTO
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+
+  <section>
+    <div class="container">
+
+      <h2>Como o planejamento pode ajudar</h2>
+
+      <div class="cards">
+
+        <div class="card testimonial">
+          “Eu contribuía todos os meses, mas não sabia se estava fazendo isso
+          da melhor forma. Com o planejamento, consegui visualizar os cenários
+          e entender quais seriam os próximos passos.”
+          <strong>— Exemplo ilustrativo</strong>
+        </div>
+
+        <div class="card testimonial">
+          “Eu já tinha passado por diferentes tipos de contribuição e não
+          conseguia entender como tudo isso entraria na minha aposentadoria.
+          A análise deixou o caminho muito mais claro.”
+          <strong>— Exemplo ilustrativo</strong>
+        </div>
+
+        <div class="card testimonial">
+          “Como MEI, eu achava que bastava continuar pagando o DAS. O
+          planejamento me ajudou a entender melhor minhas contribuições
+          e as possibilidades para o futuro.”
+          <strong>— Exemplo ilustrativo</strong>
+        </div>
+
+      </div>
+
+      <p class="testimonial-note">
+        Os textos acima são exemplos ilustrativos e não representam depoimentos
+        de clientes reais.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ESCOLHA COMO COMEÇAR -->
+
+  <section style="background:#f4ede3;">
+    <div class="container">
+
+      <h2>Escolha como começar</h2>
+
+      <div class="cta-grid">
+
+        <div class="cta-card">
+
+          <h3>Quero fazer meu planejamento</h3>
+
+          <p>
+            Fale diretamente comigo pelo WhatsApp para saber como funciona.
+          </p>
+
+          <a
+            class="btn"
+            href="https://wa.me/5565996453417?text=Olá%2C%20Dra.%20Pauline!%20Vim%20pela%20sua%20página%20e%20quero%20saber%20mais%20sobre%20o%20Planejamento%20Previdenciário."
+            target="_blank"
+          >
+            FALAR NO WHATSAPP
+          </a>
+
+        </div>
+
+        <div class="cta-card">
+
+          <h3>Sou MEI</h3>
+
+          <p>
+            Preencha o formulário e me conte um pouco sobre sua
+            situação previdenciária.
+          </p>
+
+          <a
+            class="btn"
+            href="https://forms.gle/36SMFPCtEQ9VQVSS8"
+            target="_blank"
+          >
+            PREENCHER FORMULÁRIO MEI
+          </a>
+
+        </div>
+
+        <div class="cta-card ebook-card">
+
+          <h3>eBook gratuito para MEI</h3>
+
+          <p>
+            Entenda como funciona a complementação das contribuições
+            previdenciárias do MEI e em quais situações esse assunto
+            merece sua atenção.
+          </p>
+
+          <a
+            class="btn"
+            href="https://drive.google.com/file/d/1MFSS2ocFyOX-IpKu8lFGPQw8b4Qhlp6e/view?usp=sharing"
+            target="_blank"
+          >
+            ACESSAR EBOOK GRATUITO
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+
+  <section>
+    <div class="container">
+
+      <h2>Dúvidas frequentes</h2>
+
+      <details>
+        <summary>Preciso estar perto de me aposentar?</summary>
+        <p>
+          Não. Fazer o planejamento com antecedência permite analisar não
+          apenas o que você já contribuiu, mas também pensar nas contribuições
+          que ainda serão realizadas.
+        </p>
+      </details>
+
+      <details>
+        <summary>Sou MEI. Posso fazer o planejamento?</summary>
+        <p>
+          Sim. O planejamento pode analisar suas contribuições como MEI
+          juntamente com outros vínculos e períodos contributivos.
+        </p>
+      </details>
+
+      <details>
+        <summary>O planejamento garante o valor da aposentadoria?</summary>
+        <p>
+          Não. As simulações são projeções realizadas a partir das informações
+          disponíveis e da legislação aplicável no momento da análise.
+        </p>
+      </details>
+
+      <details>
+        <summary>O Meu INSS não faz essa simulação gratuitamente?</summary>
+        <p>
+          O Meu INSS disponibiliza uma simulação automática. O Planejamento
+          Previdenciário envolve análise individualizada do histórico
+          contributivo, conferência do CNIS, comparação de cenários e
+          elaboração de uma estratégia para as próximas contribuições.
+        </p>
+      </details>
+
+      <details>
+        <summary>Sou MEI e pago apenas o DAS. Preciso complementar?</summary>
+        <p>
+          A necessidade e os efeitos de uma complementação dependem do seu
+          histórico e do objetivo previdenciário. Por isso, a decisão não deve
+          ser tomada apenas de forma automática. Você também pode começar
+          acessando gratuitamente o meu eBook sobre o tema.
+        </p>
+      </details>
+
+    </div>
+  </section>
+
   <footer>
-    © 2025 Dra. Pauline Rodrigues — Todos os direitos reservados.
+    © 2026 Dra. Pauline Rodrigues — Advocacia Previdenciária
   </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/5565996453417?text=Olá%2C%20Dra.%20Pauline!%20Vim%20pela%20sua%20página."
+    target="_blank"
+  >
+    WhatsApp
+  </a>
 
 </body>
 </html>
