@@ -89,6 +89,7 @@
       width: 100%;
       height: 560px;
       object-fit: cover;
+      object-position: center;
     }
 
     .price {
@@ -119,7 +120,7 @@
       background: var(--terracota);
     }
 
-    /* FAIXA */
+    /* FAIXA DE DESTAQUE */
 
     .highlight-strip {
       background: var(--petroleo);
@@ -216,6 +217,7 @@
       width: 100%;
       height: 460px;
       object-fit: cover;
+      object-position: center;
     }
 
     /* OFERTA */
@@ -265,7 +267,7 @@
       margin-top: 18px;
     }
 
-    /* CTA */
+    /* CTAs */
 
     .cta-grid {
       display: grid;
@@ -289,8 +291,6 @@
     .cta-card p {
       margin-bottom: 18px;
     }
-
-    /* EBOOK */
 
     .ebook-card {
       background: var(--terracota);
@@ -350,7 +350,10 @@
       font-size: .9rem;
     }
 
+    /* CELULAR */
+
     @media (max-width: 800px) {
+
       .hero-grid,
       .about-grid,
       .comparison,
@@ -361,6 +364,10 @@
 
       .hero {
         padding: 45px 0;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
       }
 
       .hero-photo {
@@ -388,6 +395,7 @@
   <!-- CAPA -->
 
   <header class="hero">
+
     <div class="container hero-grid">
 
       <div>
@@ -424,11 +432,17 @@
       </div>
 
       <div class="hero-photo">
-        <img src="pauline.jpg" alt="Dra. Pauline Rodrigues">
+        <img
+          src="IMG_8539 2.JPEG"
+          alt="Dra. Pauline Rodrigues"
+        >
       </div>
 
     </div>
+
   </header>
+
+  <!-- FRASE -->
 
   <div class="highlight-strip">
     Meu INSS simula. O planejamento analisa, compara e traça uma estratégia.
@@ -437,6 +451,7 @@
   <!-- PARA QUEM É -->
 
   <section>
+
     <div class="container">
 
       <h2>Esse planejamento é para você que...</h2>
@@ -470,11 +485,13 @@
       </div>
 
     </div>
+
   </section>
 
   <!-- COMPARAÇÃO -->
 
   <section style="background:#f4ede3;">
+
     <div class="container">
 
       <h2>Simulação do Meu INSS x Planejamento Previdenciário</h2>
@@ -519,11 +536,13 @@
       </div>
 
     </div>
+
   </section>
 
-  <!-- ENTREGA -->
+  <!-- O QUE RECEBE -->
 
   <section>
+
     <div class="container">
 
       <h2>O que você recebe no planejamento</h2>
@@ -531,41 +550,57 @@
       <div class="cards">
 
         <div class="card">
+
           <h3>Análise do CNIS</h3>
+
           <p>
             Conferência do seu histórico contributivo e identificação
             de informações que precisam de atenção.
           </p>
+
         </div>
 
         <div class="card">
+
           <h3>Simulações detalhadas</h3>
+
           <p>
             Comparação de diferentes cenários para visualizar suas
             possibilidades previdenciárias.
           </p>
+
         </div>
 
         <div class="card">
+
           <h3>Estratégia previdenciária</h3>
+
           <p>
             Orientação para que você saiba como organizar suas
             próximas contribuições.
           </p>
+
         </div>
 
       </div>
 
     </div>
+
   </section>
 
-  <!-- SOBRE -->
+  <!-- APRESENTAÇÃO -->
 
   <section style="background:#f4ede3;">
+
     <div class="container about-grid">
 
       <div class="about-photo">
-        <img src="pauline.jpg" alt="Dra. Pauline Rodrigues">
+
+        <img
+          src="IMG_8539 2.JPEG"
+          alt="Dra. Pauline Rodrigues"
+        >
+
       </div>
 
       <div>
@@ -581,18 +616,20 @@
         <p style="margin-top:15px;">
           Em vez de olhar apenas uma data estimada, analiso seu histórico
           contributivo, as informações do CNIS, diferentes cenários e as
-          possibilidades existentes para construir uma estratégia previdenciária
-          individualizada.
+          possibilidades existentes para construir uma estratégia
+          previdenciária individualizada.
         </p>
 
       </div>
 
     </div>
+
   </section>
 
   <!-- PREÇO -->
 
   <section>
+
     <div class="container">
 
       <div class="offer">
@@ -619,11 +656,13 @@
       </div>
 
     </div>
+
   </section>
 
-  <!-- DEPOIMENTOS -->
+  <!-- DEPOIMENTOS ILUSTRATIVOS -->
 
   <section>
+
     <div class="container">
 
       <h2>Como o planejamento pode ajudar</h2>
@@ -631,44 +670,57 @@
       <div class="cards">
 
         <div class="card testimonial">
+
           “Eu contribuía todos os meses, mas não sabia se estava fazendo isso
           da melhor forma. Com o planejamento, consegui visualizar os cenários
           e entender quais seriam os próximos passos.”
+
           <strong>— Exemplo ilustrativo</strong>
+
         </div>
 
         <div class="card testimonial">
+
           “Eu já tinha passado por diferentes tipos de contribuição e não
           conseguia entender como tudo isso entraria na minha aposentadoria.
           A análise deixou o caminho muito mais claro.”
+
           <strong>— Exemplo ilustrativo</strong>
+
         </div>
 
         <div class="card testimonial">
-          “Como MEI, eu achava que bastava continuar pagando o DAS. O
-          planejamento me ajudou a entender melhor minhas contribuições
+
+          “Como MEI, eu achava que bastava continuar pagando o DAS.
+          O planejamento me ajudou a entender melhor minhas contribuições
           e as possibilidades para o futuro.”
+
           <strong>— Exemplo ilustrativo</strong>
+
         </div>
 
       </div>
 
       <p class="testimonial-note">
-        Os textos acima são exemplos ilustrativos e não representam depoimentos
-        de clientes reais.
+        Os textos acima são exemplos ilustrativos e não representam
+        depoimentos de clientes reais.
       </p>
 
     </div>
+
   </section>
 
   <!-- ESCOLHA COMO COMEÇAR -->
 
   <section style="background:#f4ede3;">
+
     <div class="container">
 
       <h2>Escolha como começar</h2>
 
       <div class="cta-grid">
+
+        <!-- WHATSAPP -->
 
         <div class="cta-card">
 
@@ -688,6 +740,8 @@
 
         </div>
 
+        <!-- FORMULÁRIO -->
+
         <div class="cta-card">
 
           <h3>Sou MEI</h3>
@@ -706,6 +760,8 @@
           </a>
 
         </div>
+
+        <!-- EBOOK -->
 
         <div class="cta-card ebook-card">
 
@@ -730,62 +786,83 @@
       </div>
 
     </div>
+
   </section>
 
   <!-- FAQ -->
 
   <section>
+
     <div class="container">
 
       <h2>Dúvidas frequentes</h2>
 
       <details>
+
         <summary>Preciso estar perto de me aposentar?</summary>
+
         <p>
           Não. Fazer o planejamento com antecedência permite analisar não
           apenas o que você já contribuiu, mas também pensar nas contribuições
           que ainda serão realizadas.
         </p>
+
       </details>
 
       <details>
+
         <summary>Sou MEI. Posso fazer o planejamento?</summary>
+
         <p>
           Sim. O planejamento pode analisar suas contribuições como MEI
           juntamente com outros vínculos e períodos contributivos.
         </p>
+
       </details>
 
       <details>
+
         <summary>O planejamento garante o valor da aposentadoria?</summary>
+
         <p>
           Não. As simulações são projeções realizadas a partir das informações
           disponíveis e da legislação aplicável no momento da análise.
         </p>
+
       </details>
 
       <details>
+
         <summary>O Meu INSS não faz essa simulação gratuitamente?</summary>
+
         <p>
           O Meu INSS disponibiliza uma simulação automática. O Planejamento
           Previdenciário envolve análise individualizada do histórico
           contributivo, conferência do CNIS, comparação de cenários e
           elaboração de uma estratégia para as próximas contribuições.
         </p>
+
       </details>
 
       <details>
+
         <summary>Sou MEI e pago apenas o DAS. Preciso complementar?</summary>
+
         <p>
           A necessidade e os efeitos de uma complementação dependem do seu
-          histórico e do objetivo previdenciário. Por isso, a decisão não deve
-          ser tomada apenas de forma automática. Você também pode começar
-          acessando gratuitamente o meu eBook sobre o tema.
+          histórico e do seu objetivo previdenciário. Por isso, essa decisão
+          deve considerar o caso concreto. Você também pode começar acessando
+          gratuitamente o meu eBook sobre complementação das contribuições
+          do MEI.
         </p>
+
       </details>
 
     </div>
+
   </section>
+
+  <!-- RODAPÉ -->
 
   <footer>
     © 2026 Dra. Pauline Rodrigues — Advocacia Previdenciária
